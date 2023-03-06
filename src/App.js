@@ -1,21 +1,19 @@
-// import './App.css';
-import style from "./App.module.css";
+import './App.css';
+// import style from "./App.module.css";
 import {User} from './User';
 import { useState } from "react";
 
 function App() {
-  // let age = 0;
-  const [age, setAge] = useState(0)
+  const [inputValue, setInputValue]=useState("");
 
-  const inCraseAge = () =>{
-    // age = age +1;
-    // console.log(age)
-    setAge(age+3);
-  };
-
+  const handleInputChange = (event) =>{
+    // For Direct print
+    setInputValue(event.target.value)
+  }
   return (
-    <div className={style.App}>
-      {age} <button onClick={inCraseAge}>Incrase Age</button>
+    <div className="App">
+      <input type="text" onChange={handleInputChange} />
+      <p>{inputValue}</p>
 
     </div>
   );
