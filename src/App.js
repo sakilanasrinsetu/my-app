@@ -4,17 +4,17 @@ import {User} from './User';
 import { useState } from "react";
 
 function App() {
-  const [inputValue, setInputValue]=useState("");
+  const [showText, setShowText]=useState(true);
 
-  const handleInputChange = (event) =>{
-    // For Direct print
-    setInputValue(event.target.value)
-  }
   return (
     <div className="App">
-      <input type="text" onChange={handleInputChange} />
-      <p>{inputValue}</p>
-
+      <button onClick={() =>{
+      setShowText(!showText);
+      }}
+      >
+      Show/Hide
+      </button>
+      {showText === true && <h1>Hi and hello</h1>}
     </div>
   );
 }
