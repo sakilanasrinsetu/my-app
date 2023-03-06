@@ -4,17 +4,17 @@ import {User} from './User';
 import { useState } from "react";
 
 function App() {
-  const [showText, setShowText]=useState(true);
+  const [textColor, setTextColor]=useState("Green");
 
   return (
     <div className="App">
       <button onClick={() =>{
-      setShowText(!showText);
+      setTextColor(textColor === "green" ? "red": "green");
       }}
       >
       Show/Hide
       </button>
-      {showText === true && <h1>Hi and hello</h1>}
+      <h1 style={{color: textColor}}>Hi and hello</h1>
     </div>
   );
 }
